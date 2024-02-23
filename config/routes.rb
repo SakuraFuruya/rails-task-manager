@@ -7,4 +7,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # see all
+  get 'tasks', to: 'tasks#index', as: :tasks
+
+  #receive the form submission
+  post 'tasks', to: 'tasks#create',
+  #see new task
+  get 'task/new', to: 'tasks#new', as: :new_task
+  #see one
+  get 'tasks/:id', to: 'tasks#show', as: :task
+
 end
